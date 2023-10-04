@@ -5,13 +5,16 @@ on:
     branches: [master] # is triggered if push event in master branch occurs
 
 jobs:
-  Test and lint:
+  test and lint:
+    name: Test and Lint Application
     runs-on: ubuntu-latest
     steps:
       - name: Reuse Workflow from Template
       uses: ./.github/workflows/development.yaml
    
-  Build:
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -27,8 +30,10 @@ jobs:
       - name: Build the project
         uses: actions/upload-pages-artifact@v2
  
-  Deployment:
+  deployment:
     # should run AFTER test and build (see `needs`) 
+    name: Deploy Application
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
