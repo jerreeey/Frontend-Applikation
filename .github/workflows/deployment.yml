@@ -36,6 +36,13 @@ jobs:
     name: Deploy Application
     runs-on: ubuntu-latest
     needs: [test_and_lint, build]
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
