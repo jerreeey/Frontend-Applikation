@@ -27,9 +27,9 @@ jobs:
         uses: actions/upload-pages-artifact@v2
  
   deployment:
-    # should run AFTER test and build (see `needs`) 
     name: Deploy Application
     runs-on: ubuntu-latest
+    needs: [test_and_lint, build]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
