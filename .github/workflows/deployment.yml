@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           name: application-artifact
-          path: ./build
+          path: ./dist
  
   deployment:
     name: Deploy Application
