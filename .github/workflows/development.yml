@@ -5,5 +5,5 @@ on:
     branches: [development] # is triggered if push event in development branch occurs
 
 jobs:
-  test and lint:
+  test_and_lint:
     uses: jerreeey/Frontend-Applikation/.github/workflows/testing_and_linting.yaml@development

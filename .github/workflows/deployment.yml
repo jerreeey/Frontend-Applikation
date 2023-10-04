@@ -5,7 +5,7 @@ on:
     branches: [master] # is triggered if push event in master branch occurs
 
 jobs:
-  test and lint:
+  test_and_lint:
     uses: jerreeey/Frontend-Applikation/.github/workflows/testing_and_linting.yaml@master
    
   build:
