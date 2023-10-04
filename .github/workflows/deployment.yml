@@ -28,6 +28,9 @@ jobs:
 
       - name: Upload the artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          name: application-artifact
+          path: ./build
  
   deployment:
     name: Deploy Application
@@ -42,6 +45,8 @@ jobs:
 
       - name: Download the build artifacts
         uses: actions/download-artifact@v3
+        with:
+          name: application-artifact 
 
       - name: Deploy to github pages
         uses: actions/deploy-pages@v2 
