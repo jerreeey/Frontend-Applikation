@@ -6,7 +6,7 @@ on:
 
 jobs:
   test and lint:
-    uses: jerreeey/Frontend-Applikation/.github/workflows/testing_and_linting.yaml
+    uses: jerreeey/Frontend-Applikation/.github/workflows/testing_and_linting.yaml@master
    
   build:
     name: Build Application
