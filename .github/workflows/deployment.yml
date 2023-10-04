@@ -57,3 +57,5 @@ jobs:
 
       - name: Deploy to github pages
         uses: actions/deploy-pages@v2 
+        with: 
+          artifact_name: application-artifact
