@@ -1,8 +1,8 @@
-import './styles.scss'
-import './style.css'
-import typescriptLogo from './typescript.svg'
+import '../styles/styles.scss'
+import '../styles/style.css'
+import typescriptLogo from '../images/typescript.svg'
 // eslint-disable-next-line import/no-unresolved
-import viteLogo from '/vite.svg'
+import viteLogo from '../images/vite.svg'
 import { setupCounter } from './counter.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
