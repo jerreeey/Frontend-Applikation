@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/typescript/main.ts"></script>
+    <title>About</title>
+  </head>
+  <body>
+    <nav class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="../" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../favorites/" class="nav-link">Favorite GOT characters</a></li>
+          <li class="nav-item"><a href="./about/" class="nav-link active" aria-current="page">About</a></li>
+        </ul>
+      </header>
+    </nav>
+    <main>
+      <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Sign up</h1>
+            <p class="col-lg-10 fs-4">
+                Please sign up. I don't want to be a useless form. 
+            </p>
+          </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingUsername" placeholder="Username" />
+                <label for="floatingUsername">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingAge" placeholder="Age" />
+                <label for="floatingAge">Age</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                <label for="floatingPassword">Password</label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

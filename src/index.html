@@ -4,11 +4,41 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <script type="module" src="/typescript/main.ts"></script>
+    <title>Home</title>
   </head>
   <body>
-    <a href="/Frontend-Applikation/about/">About</a>
+    <nav class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="./favorites/" class="nav-link">Favorite GOT characters</a></li>
+          <li class="nav-item"><a href="./about/" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    </nav>
+    <main>
+      <div class="px-4 pt-5 my-5 text-center">
+        <h1 class="display-4 fw-bold text-body-emphasis">Welcome!</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">This is a simple page where you can consume a Game of Thrones API and fill out a form. Enjoy!</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <a href="./favorites/" class="btn btn-primary btn-lg px-4 me-sm-3">Consume API</a>
+            <a href="./about/" class="btn btn-outline-secondary btn-lg px-4">Fill out form</a>
+          </div>
+        </div>
+        <div class="container px-5">
+          <img
+            src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/UL7HTTZVWWF4M3IJ33PX2TEWLY_size-normalized.jpg&w=1440&impolicy=high_res"
+            class="img-fluid border rounded-3 shadow-lg mb-4"
+            alt="Two otters swimming. One otter is waving into the camera"
+            width="700"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </main>
     <div id="app"></div>
-    <script type="module" src="/typescript/main.ts"></script>
   </body>
 </html>

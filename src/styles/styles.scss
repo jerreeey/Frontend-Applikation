@@ -1,6 +1,2 @@
-/* styles.scss */
-$body-color: red;
-
-body {
-  color: $body-color;
-}
+@import "bootstrap/scss/bootstrap";
+@import "./card.scss";

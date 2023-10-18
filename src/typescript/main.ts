@@ -1,26 +1,48 @@
 import '../styles/styles.scss'
-import '../styles/style.css'
-import typescriptLogo from '../images/typescript.svg'
-// eslint-disable-next-line import/no-unresolved
-import viteLogo from '../images/vite.svg'
-import { setupCounter } from './counter.ts'
+import { fetchAPI, ApiData } from './api'
+import Favorites from './favorites'
+import { renderAllCharacters, renderFavorites } from './renderHTML'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const favorites:Favorites = new Favorites()
+const data:ApiData = await fetchAPI("https://thronesapi.com/api/v2/Characters")
+renderAllCharacters(data)
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const cardElements : NodeListOf<HTMLElement> = document.querySelectorAll('[data-id]')
+cardElements.forEach(element => {
+    const addToFavoritesBtn = element.querySelector('button')
+    if (addToFavoritesBtn) {
+        addToFavoritesBtn.addEventListener('click', () => {
+            const id = element.getAttribute('data-id')
+            if(id) {
+                const wasAdded : boolean = favorites.addToFavorites(data[+id])
+                if (wasAdded) {
+                    renderFavorites(favorites)
+                    addRemoveEventListener()
+                }
+            }
+        })
+    }
+});
+
+
+function addRemoveEventListener() {
+    const cardElements : HTMLElement | null = document.querySelector('[data-favorites]')
+    if (cardElements) {
+        const favoriteElements = cardElements.querySelectorAll('[data-id]')
+        favoriteElements.forEach(element => {
+            const removeFromFavoritesButton = element.querySelector('button')
+            if (removeFromFavoritesButton) {
+                removeFromFavoritesButton.addEventListener('click', () => {
+                    const id = element.getAttribute('data-id')
+                    if(id) {
+                        const wasRemoved : boolean = favorites.removeFromFavorites(data[+id])
+                        if (wasRemoved) {
+                            renderFavorites(favorites)
+                            addRemoveEventListener()
+                        }
+                    }
+                })
+            }
+        })
+    }
+}
