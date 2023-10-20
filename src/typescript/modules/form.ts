@@ -1,5 +1,3 @@
-import { error } from "console"
-
 export default function() {
     const form : HTMLFormElement | null = document.querySelector('form')
     const formelements : NodeListOf<HTMLInputElement> | null = document.querySelectorAll('input')
