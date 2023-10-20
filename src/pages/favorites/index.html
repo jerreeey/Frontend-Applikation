@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/typescript/main.ts"></script>
+    <title>Favorites</title>
+  </head>
+  <body data-loadmodule="favorites">
+    <nav class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="../../" class="nav-link" >Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link active">Favorite GOT characters</a></li>
+          <li class="nav-item"><a href="../signup/" class="nav-link" aria-current="page">Sign up</a></li>
+        </ul>
+      </header>
+    </nav>
+    <main>
+      <div class="container">      
+        <h1 class="display-4 fw-bold text-body-emphasis">Game of Thrones API</h1>
+        <p class="col-lg-10 fs-4">Have fun by consuming this GOT API. You can add and remove characters to your list of favorite characters.
+        </div></p>
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <h2>Favorites</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" data-favorites>
+          </div>
+        </div>
+      </div>
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <h2 class="my-3">All characters</h1>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" data-all>
+            <div class="col" style="display: none;" data-card>
+              <div class="card shadow-sm">
+                <img class="bd-placeholder-img card-img-top" alt=""  height="225" data-img>
+                <div class="card-body">
+                  <h3 class="fs-3 card-title" data-name></h3>
+                </div>
+                <div class="card-header">
+                  Info
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" data-title>Title:  </li>
+                  <li class="list-group-item" data-house>Family: </li>
+                </ul>
+                <div class="card-body">
+                  <div class="d-flex  align-items-center">
+                      <button type="button" class="btn btn-sm btn-outline-primary">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
