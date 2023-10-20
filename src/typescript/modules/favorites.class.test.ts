@@ -1,5 +1,5 @@
 import { expect, describe, test, beforeEach } from 'vitest';
-import Favorites from './favorites';
+import Favorites from './favorites.class.';
 import { CharacterAPI } from './api';
 
 describe('My Favorites tests', () => {

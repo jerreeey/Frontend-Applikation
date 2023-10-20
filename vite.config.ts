@@ -23,8 +23,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'),
-        about: resolve(__dirname, 'src/about/index.html'),
-        favorites: resolve(__dirname, 'src/favorites/index.html')
+        signup: resolve(__dirname, 'src/pages/signup/index.html'),
+        favorites: resolve(__dirname, 'src/pages/favorites/index.html')
       },
     },
   },

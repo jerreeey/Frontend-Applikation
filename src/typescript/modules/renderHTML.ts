@@ -1,5 +1,5 @@
 import { ApiData } from "./api";
-import Favorites from "./favorites";
+import Favorites from "./favorites.class.";
 
 export function renderAllCharacters(data:ApiData):void {
     const list : HTMLElement | null | undefined = <HTMLElement>document.querySelector('[data-all]')
